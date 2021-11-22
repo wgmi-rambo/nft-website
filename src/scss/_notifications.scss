@@ -1,0 +1,44 @@
+#notifications {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    z-index: 2;
+}
+
+.notifications__single {
+    background-color: grey;
+    color: white;
+    padding: 15px 20px 15px 15px;
+    vertical-align: middle;
+
+    &.success {
+        background-color: green;
+    }
+    &.error {
+        background-color: red;
+    }
+
+    &__close {
+        font-size: .7em;
+        display: inline-block;
+        vertical-align: middle;
+        padding: 2px 6px 4px 6px;
+        margin: 2px 5px 2px 2px;
+        background-color: #b9b9b9;
+        color: black;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    &__msg {
+        vertical-align: middle;
+        color: #e3e3e3;
+    }
+
+    &__error {
+        vertical-align: middle;
+        font-size: 1em;
+        color: white;
+    }
+}

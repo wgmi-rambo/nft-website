@@ -1,0 +1,113 @@
+{% extends '_base.html' %}
+
+{% block meta_title %}$WGMI NFT{% endblock %}
+
+{% block content %}
+    <div class="hero">
+        <div class="hero-text">
+            <ul>
+                <li>Point 1</li>
+                <li>Point 2</li>
+                <li>Point 3.</li>
+            </ul>
+        </div>
+        <div class="btn-container">
+
+            <div class="row">
+                <button class="btn-small" id="sign-in">
+                    <div>Connect Wallet</div>
+                </button>
+                <br>
+                <button class="btn" id="mint-submit">
+                    <div>MINT</div>
+                    <div class="note">
+                        <span id="token_count"></span>
+                    </div>
+                </button>
+                <form>
+                    <div class="mint-quantity">
+                        <div id="mint-quantity-value">1</div>
+                        <input type="range" min="1" max="10" value="1" name="mint-quantity-input" id="mint-quantity-input">
+                    </div>
+                    <div class="mint-help">Max 10 per address. 0.06 ETH per mint.</div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="row">
+            <div class="lead">
+                <h1>What is $WGMI?</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat.
+                    <br>
+                    <br>
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+
+            <div id="cycler">
+                <img src="images/slides.png">
+            </div>
+        </div>
+
+        <div class="row main-text">
+            <div>
+                <h1>Something</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat.
+                    <br>
+                    <br>
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+
+            <div>
+                <h1>More Content</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat.
+                    <br>
+                    <br>
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur!
+                </p>
+            </div>
+        </div>
+
+        {# Gallery #}
+        <div class="row gallery">
+            <img src="images/tokens/11.png">
+            <img src="images/tokens/12.png">
+            <img src="images/tokens/13.png">
+            <img src="images/tokens/10.png">
+        </div>
+
+    </div>
+{% endblock %}
+{% block js %}
+    <script type="text/javascript">
+        function rangeSlide(value) {
+            document.getElementById('mint-quantity-value').innerHTML = value;
+        }
+
+        $("#mint-quantity-input").on("change", function(){
+            rangeSlide(this.value)
+        });
+        $("#mint-quantity-input").on("mousemove", function(){
+            rangeSlide(this.value)
+        });
+    </script>
+{% endblock %}

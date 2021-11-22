@@ -1,0 +1,28 @@
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>{% block meta_title %}{% endblock %}</title>
+        {% include "_modules/favicons.html" %}
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+
+    <body>
+        {% include "_modules/header.html" %}
+
+        <div id="notifications"></div>
+
+        {% block content %}{% endblock %}
+
+        <footer>
+            $WGMI
+        </footer>
+
+        <script src="/js/libs/jquery-3.6.0.min.js"></script>
+        <script src="/js/libs/ethers-5.2.umd.min.js"></script>
+        <script src="/js/bundle.js"></script>
+        {% block js %}{% endblock %}
+    </body>
+</html>

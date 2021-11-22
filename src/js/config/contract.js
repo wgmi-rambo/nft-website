@@ -1,0 +1,6 @@
+const MINT_PRICE = 0.06; // In eth
+const MAX_TOKEN_SUPPLY = 10000;
+const CONTRACT_ADDRESS = "0x12345";
+const NFT_NAME = "My Cool NFT";
+
+export default { MINT_PRICE, MAX_TOKEN_SUPPLY, CONTRACT_ADDRESS, NFT_NAME };

@@ -1,0 +1,66 @@
+.header-wrapper {
+    padding: 10px 20px;
+    background-color: #e5d2df;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    max-width: 100%;
+    width: 1500px;
+    margin: 25px auto;
+
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .logo {
+        display: block;
+        margin: 10px auto;
+        padding: 10px;
+        font-size: 3em;
+        font-weight: bold;
+    }
+
+    nav {
+        display: block;
+        margin: auto;
+
+        a {
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid white;
+            transition: ease-in-out border .5s;
+
+            &:hover {
+                border: 1px solid black;
+            }
+        }
+    }
+}
+
+
+// icons
+nav {
+    .icon {
+        width: 44px;
+        height: 44px;
+        display: inline-block;
+
+        &.twitter {
+            background: url(images/icons/twitter.svg) no-repeat center;
+        }
+        &.opensea {
+            background: url(images/icons/opensea.svg) no-repeat center;
+        }
+        &.discord {
+            background: url(images/icons/discord.svg) no-repeat center;
+        }
+        &.etherscan {
+            background: url(images/icons/etherscan.svg) no-repeat center;
+            background-size: 20px;
+        }
+    }
+}

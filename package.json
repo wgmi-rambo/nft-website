@@ -1,0 +1,27 @@
+{
+  "name": "JB NFT Website Template",
+  "version": "1.0.0",
+  "description": "NFT website template by JB.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/berksonj/nft_website_template.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/berksonj/nft_website_template/issues"
+  },
+  "homepage": "https://github.com/berksonj/nft_website_template#readme",
+  "dependencies": {
+    "ethers": "^5.5.1",
+    "jquery": "^3.6.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "rollup": "^2.59.0"
+  }
+}
