@@ -35,3 +35,13 @@ Watches the `src/` dir for changes, then runs the build command.
 ```bash
 pipenv run python watch.py;
 ```
+
+
+
+## Misc.
+
+**Deploy to Netlify**
+
+```bash
+pipenv run python build.py; netlify deploy --dir=build --prod;
+```
