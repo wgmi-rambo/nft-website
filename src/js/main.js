@@ -16,26 +16,39 @@ const noop = () => {};
 
 function _notify(msg, status, error = null) {
     console.log("Notification:", msg);
-    let error_ = "";
-    if (error != null) {
+
+    // Custom error messages
+    let error_msg = "";
+    if (error != null && error != undefined) {
         console.log("Error:", error);
-        error_ = error.reason;
-        if (error.code == "UNPREDICTABLE_GAS_LIMIT") {
-            error_ = "Sales not open yet.";
+        if (error.data != undefined && error.data.message != undefined) {
+            error_msg = error.data.message;
+
+            // Remove "VM Exception while processing transaction: revert " if it exists
+            error_msg = error_msg.replace("VM Exception while processing transaction: revert ", "");
+
+            // Capitalize first letter
+            error_msg = error_msg[0].toUpperCase() + error_msg.substring(1);
         }
     }
 
+    // Add html to page
     const _html = `
     <div class="notifications__single ${status}">
         <span class="notifications__single__close">x</span>
         <span class="notifications__single__msg">${msg}</span>
-        <span class="notifications__single_error">${error_}</span>
+        <span class="notifications__single_error">${error_msg}</span>
     </div>
     `;
-    const html = $(_html);
-    const notification = $("#notifications").prepend(html);
-    html.children(".notifications__single__close").on("click", function (e) {
-        $(this).parent().hide("slow");
+    const notification = $(_html);
+    const notification_container = $("#notifications").prepend(notification);
+
+    // Auto hide after 8 secs
+    notification.delay(8000).hide(1000);
+
+    // Close on user clicks close button
+    notification.children(".notifications__single__close").on("click", function (e) {
+        $(this).parent().dequeue().hide("slow");
     });
 }
 
