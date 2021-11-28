@@ -2,4 +2,14 @@ footer {
     padding: 20px;
     color: black;
     background-color: #e25822af;
+
+    .row {
+        display: flex;
+        max-width: 100%;
+        width: 1500px;
+        margin: 0 auto;
+
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
 }
