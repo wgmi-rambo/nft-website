@@ -98,9 +98,7 @@ function _mint(web3Provider, quantity) {
 
 function _get_token_count(web3Provider) {
     const contract = new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, web3Provider);
-    // const token_count = contract.totalSupply()
-
-    return contract.tokenCounter();
+    return contract.totalSupply();
 }
 
 function main() {
@@ -120,8 +118,9 @@ function main() {
                     _notify("Please switch to Ethereum Mainnet", "error");
                 } else {
                     _get_token_count(web3Provider)
-                        .then(count => {
-                            $("#token_count").text(`${count - 1}/${MAX_TOKEN_SUPPLY}`);
+                        .then(_count => {
+                            const count = ethers.BigNumber.from(_count).toNumber();
+                            $("#token_count").text(`${count}/${MAX_TOKEN_SUPPLY}`);
                         })
                         .catch(e => {
                             _notify("Failed to get current token count.", "error", e);
