@@ -25,7 +25,7 @@ pipenv run python server.py;
 ### Build
 
 ```bash
-pipenv run python utils/build.py;
+pipenv run python build.py;
 ```
 
 ### Watch
