@@ -134,7 +134,7 @@ function main() {
     $("#mint-submit").on("click", function (e) {
         e.preventDefault();
         let quantity = $("#mint-quantity-input").val();
-        if (quantity < 1 || quantity > 10) {
+        if (quantity < 1 || quantity > 3) {
             quantity = 1;
         }
         _mint(web3Provider, quantity);
