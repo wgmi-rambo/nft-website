@@ -2,8 +2,8 @@
 
 ## Dependencies
 
-- Python - ^3.10.0
-- Node.js - ^16.5.0
+- Python - ^3.9.0
+- Node.js - ^16.13.0
 - NPM - ^8.1.2
 
 ## Configure
