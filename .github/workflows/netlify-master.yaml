@@ -1,0 +1,64 @@
+name: Deploy to Preview
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Cache Compiler Installations
+      uses: actions/cache@v2
+      with:
+        path: |
+          ~/.solcx
+          ~/.vvm
+        key: compiler-cache
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v1
+
+    - name: Install Node Deps
+      run: npm install
+
+    - name: Setup Python 3.9
+      uses: actions/setup-python@v2
+      id: setup-python
+      with:
+        python-version: 3.9
+
+    - name: Install Requirements
+      run: |
+        pip install pipenv;
+        pipenv install --system --deploy --ignore-pipfile;
+        touch .env;
+
+    - name: Deploy to netlify
+      steps:
+        - uses: jsmrcaga/action-netlify-deploy@v1.1.0
+          with:
+            NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+            NETLIFY_SITE_ID: f305c59b-b987-4df2-b540-c8a5ef30be29
+            build_directory: "build"
+            install_command: ""
+            build_command: ""
+            NETLIFY_DEPLOY_TO_PROD: true
+
+    - name: Cache Python virtualenvs
+      uses: actions/cache@v2
+      with:
+        path: ~/.local/share/virtualenvs
+        key: ${{ runner.os }}-python-${{ steps.setup-python.outputs.python-version }}-pipenv-${{ hashFiles('Pipfile.lock') }}
+
+    - name: Cache Node packages
+      uses: actions/cache@v2
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
