@@ -11,6 +11,8 @@ const MINT_PRICE = contractConfig.MINT_PRICE;
 const MAX_TOKEN_SUPPLY = contractConfig.MAX_TOKEN_SUPPLY;
 const CONTRACT_ADDRESS = contractConfig.CONTRACT_ADDRESS;
 const NFT_NAME = contractConfig.NFT_NAME;
+const CHAIN_NAME = contractConfig.CHAIN_NAME;
+const CHAIN_ID = contractConfig.CHAIN_ID;
 
 const noop = () => {};
 
@@ -114,8 +116,8 @@ function main() {
         if (web3Provider) {
             console.log("web3Provider");
             web3Provider._networkPromise.then(web3Obj => {
-                if (web3Obj.chainId != 1) {
-                    _notify("Please switch to Ethereum Mainnet", "error");
+                if (web3Obj.chainId != CHAIN_ID) {
+                    _notify("Please switch to " + CHAIN_NAME, "error");
                 } else {
                     _get_token_count(web3Provider)
                         .then(_count => {
