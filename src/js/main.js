@@ -137,7 +137,7 @@ function main() {
         e.preventDefault();
         let quantity = $("#mint-quantity-input").val();
         quantity = parseInt(quantity);
-        if (quantity < 1 || quantity > 3) {
+        if (quantity < 1 || quantity > 20) {
             quantity = 1;
         }
         _mint(web3Provider, quantity);
