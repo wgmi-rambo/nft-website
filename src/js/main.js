@@ -136,6 +136,7 @@ function main() {
     $("#mint-submit").on("click", function (e) {
         e.preventDefault();
         let quantity = $("#mint-quantity-input").val();
+        quantity = parseInt(quantity);
         if (quantity < 1 || quantity > 3) {
             quantity = 1;
         }
