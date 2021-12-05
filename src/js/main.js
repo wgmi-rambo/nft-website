@@ -57,8 +57,7 @@ function _notify(msg, status, error = null) {
 function _sign_in() {
     try {
         const ethereum = window.ethereum;
-        const metamaskIsInstalled = ethereum && ethereum.isMetaMask;
-        if (metamaskIsInstalled) {
+        if (ethereum) {
             const web3Provider = new ethers.providers.Web3Provider(ethereum);
 
             web3Provider
