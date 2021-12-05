@@ -1,76 +1,85 @@
-p {
-    margin-bottom: 10px;
-    font-family: 'M PLUS 1 Code', sans-serif;
-}
-
-h1 {
-    font-family: 'VT323', monospace;
-    font-size:2.4em;
-}
-
-.content {
-    display: block;
-    color: white;
-    width: 100%;
-    max-width: 1300px;
-    padding: 30px;
-    margin: 0 auto;
-    font-size: 1.2em;
-    line-height: 1.2;
-    min-height: 100vh;
-
-    .row {
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
+/* --- Start Responsive Footer NFTs --- */
+@media only screen and (max-width: 1350px) {
+    .content .gallery img {
+        width:100px;
+        height:100px;
     }
-    .lead {
-        display: block;
-        width: 500px;
+    }
+    /* --- End Responsive Footer NFTs --- */
+    
+    p {
         margin-bottom: 10px;
-
-        p {
-            font-size: 1.2em;
-            line-height: 1.4em;
-        }
+        font-family: 'M PLUS 1 Code', sans-serif;
     }
-    #cycler {
-        position: relative;
+    
+    h1 {
+        font-family: 'VT323', monospace;
+        font-size:2.4em;
+    }
+    
+    .content {
         display: block;
-        width: 500px;
-        max-width: 100%;
-        min-height: 500px;
-        height: auto;
-
-        img {
-            max-width: 100%;
-            height: auto;
-            position:absolute;
-            z-index:1;
-
-            .active {
-                z-index:3;
+        color: white;
+        width: 100%;
+        max-width: 1300px;
+        padding: 30px;
+        margin: 0 auto;
+        font-size: 1.2em;
+        line-height: 1.2;
+        min-height: 100vh;
+    
+        .row {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .lead {
+            display: block;
+            width: 500px;
+            margin-bottom: 10px;
+    
+            p {
+                font-size: 1.2em;
+                line-height: 1.4em;
             }
         }
-    }
-
-    .gallery {
-        justify-content: center;
-        flex-wrap: nowrap;
-
-        img {
+        #cycler {
+            position: relative;
+            display: block;
+            width: 500px;
             max-width: 100%;
-            width: 25%;
+            min-height: 500px;
             height: auto;
-            padding: 5px;
+    
+            img {
+                max-width: 100%;
+                height: auto;
+                position:absolute;
+                z-index:1;
+    
+                .active {
+                    z-index:3;
+                }
+            }
+        }
+    
+        .gallery {
+            justify-content: center;
+            flex-wrap: nowrap;
+    
+            img {
+                max-width: 100%;
+                width: 25%;
+                height: auto;
+                padding: 5px;
+            }
+        }
+    
+        .main-text {
+            text-align: center;
+            margin: 10px auto 20px auto;
+            width: 100%;
+            max-width: 900px;
         }
     }
-
-    .main-text {
-        text-align: center;
-        margin: 10px auto 20px auto;
-        width: 100%;
-        max-width: 900px;
-    }
-}

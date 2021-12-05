@@ -1,8 +1,8 @@
 const MINT_PRICE = 0.06; // In eth
 const MAX_TOKEN_SUPPLY = 887;
-const CONTRACT_ADDRESS = "0x975eb08A1B1FF1782bb889dFa1D043657d1fCA23";
+const CONTRACT_ADDRESS = "0x4B2289FddD49398CC603075339c3CF1fF17Cd95A";
 const NFT_NAME = "Unruggables";
-const CHAIN_NAME = "Rinkeby Testnet";
-const CHAIN_ID = 4;
+const CHAIN_NAME = "Ethereum Mainnet";
+const CHAIN_ID = 1;
 
 export default { MINT_PRICE, MAX_TOKEN_SUPPLY, CONTRACT_ADDRESS, NFT_NAME, CHAIN_NAME, CHAIN_ID };
